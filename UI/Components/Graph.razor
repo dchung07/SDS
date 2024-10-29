@@ -1,0 +1,31 @@
+@using lnn_ui.Models
+@using ApexCharts
+<div style="max-width: 1000px">
+    <ApexChart Title="Weather Data" TItem="LnnOutput">
+        <ApexPointSeries TItem="LnnOutput"
+                         Items="GraphInput"
+                         SeriesType="SeriesType.Line"
+                         Name="Prediction"
+                         XValue="output => output.Index"
+                         YValue="output => (decimal?)output.Nature"/>
+        
+        <ApexPointSeries TItem="LnnOutput"
+                         Items="GraphInput"
+                         SeriesType="SeriesType.Line"
+                         Name="Temperature"
+                         XValue="output => output.Index"
+                         YValue="output => (decimal?)output.Intensity"/>
+        
+        <ApexPointSeries TItem="LnnOutput"
+                         Items="GraphInput"
+                         SeriesType="SeriesType.Line"
+                         Name="Vorticity"
+                         XValue="output => output.Index"
+                         YValue="output => (decimal?)output.Gust"/>
+    </ApexChart>
+</div>
+
+
+@code {
+    [Parameter] public List<LnnOutput> GraphInput { get; set; } = [];
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\lnn-ui.props" />
+</Project>
