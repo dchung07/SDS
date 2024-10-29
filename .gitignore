@@ -1,0 +1,7 @@
+.venv
+.idea
+state.txt
+model.pth
+SP.csv
+.myenv
+__pycache__
